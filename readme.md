@@ -1,3 +1,20 @@
+Installation From Scratch:
+
+scp -i ~/Downloads/personal_aws_dev.pem src/*_dna ubuntu@ec2-18-191-11-247.us-east-2.compute.amazonaws.com:
+
+git clone https://github.com/zhanif3/701
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+source $HOME/.cargo/env
+cd 701
+sudo apt-get update
+sudo apt-get install build-essential
+cargo build --release
+
+target/release/generator ../100_000_dna ttt
+
+---
+
+
 cargo new bwt --bin
 
 So:
@@ -127,3 +144,77 @@ You searched for: "ttccccgg".
 There are 348 matches.
 SIZEOF LF: FC; 5, F; 180000009, L; 180000009, Index; 360000018
 target/release/generator  ttccccgg  11548.85s user 66.50s system 679% cpu 28:30.53 total
+
+
+-----
+
+ubuntu@ip-172-31-9-207:~/701$ target/release/generator ../10_000_000_dna tttcccg
+READ THE FILE: 0
+BUILT THE SUFFIX ARRAY: 0
+BUILT THE LF STRUCTURE: 3
+BUILT THE ORIGINAL STRING: 1
+BUILT ZIPPED: 0
+ABA SHOULD BE SOME(2, 4): Some((9896410, 9897014))
+You searched for: "tttcccg".
+There are 605 matches.
+SIZEOF LF: FC; 5, F; 90000009, L; 90000009, Index; 180000018
+
+ubuntu@ip-172-31-9-207:~/701$ target/release/generator ../20_000_000_dna tttcccg
+READ THE FILE: 0
+BUILT THE SUFFIX ARRAY: 82
+BUILT THE LF STRUCTURE: 6
+BUILT THE ORIGINAL STRING: 3
+BUILT ZIPPED: 0
+ABA SHOULD BE SOME(2, 4): Some((19792818, 19794027))
+You searched for: "tttcccg".
+There are 1210 matches.
+SIZEOF LF: FC; 5, F; 180000009, L; 180000009, Index; 360000018
+
+ubuntu@ip-172-31-9-207:~/701$ time target/release/generator ../20_000_000_dna tttcccg
+READ THE FILE: 0
+BUILT THE SUFFIX ARRAY: 81
+BUILT THE LF STRUCTURE: 7
+BUILT THE ORIGINAL STRING: 3
+BUILT ZIPPED: 0
+ABA SHOULD BE SOME(2, 4): Some((19792818, 19794027))
+You searched for: "tttcccg".
+There are 1210 matches.
+SIZEOF LF: FC; 5, F; 180000009, L; 180000009, Index; 360000018
+
+real	1m33.969s
+user	129m46.648s
+sys	0m23.870s
+
+ubuntu@ip-172-31-9-207:~/701$ time target/release/generator ../50_000_000_dna tttcccg
+READ THE FILE: 0
+BUILT THE SUFFIX ARRAY: 8320
+BUILT THE LF STRUCTURE: 22
+BUILT THE ORIGINAL STRING: 10
+BUILT ZIPPED: 0
+ABA SHOULD BE SOME(2, 4): Some((49482042, 49485066))
+You searched for: "tttcccg".
+There are 3025 matches.
+SIZEOF LF: FC; 5, F; 450000009, L; 450000009, Index; 900000018
+
+real	139m18.520s
+user	13283m42.176s
+sys	1m35.342s
+
+----
+
+Comparisons:
+
+https://github.com/shenwei356/bwt
+https://github.com/Aluriak/bwt
+
+----
+
+Correctness:
+➜  bwt git:(master) ✗ time target/release/all_in_one /Users/bxa005/masters/701/Project/rust/bwt/src/ros TGTTGGA
+There are 1 matches.
+
+➜  bwt git:(master) ✗ time target/release/all_in_one /Users/bxa005/masters/701/Project/rust/bwt/src/ros AAGG
+There are 4 matches.
+
+➜  bwt git:(master) ✗ time target/release/all_in_one /Users/bxa005/masters/701/Project/rust/bwt/src/ros G
+There are 236 matches.

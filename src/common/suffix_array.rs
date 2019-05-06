@@ -1,6 +1,6 @@
 //extern crate bincode;
 
-//use serde::{Serialize, Deserialize};
+use serde::{Serialize, Deserialize};
 
 use crate::types::Nucleotide;
 use crate::types::Suffix;
@@ -14,8 +14,8 @@ use std::io::{BufRead, BufReader, Result};
 use std::time::{Duration, SystemTime};
 use rayon::prelude::*;
 
-//#[derive(Serialize, Deserialize, PartialEq, Debug)]
-#[derive(Debug)]
+#[derive(Serialize, Deserialize, PartialEq, Debug)]
+//#[derive(Debug)]
 pub struct LF {
     pub L: Vec<Nucleotide>,
     pub F: Vec<Nucleotide>, // Character,
@@ -162,7 +162,7 @@ pub fn construct_lf(t: &str, sa: &Vec<Suffix>) -> LF {
     };
 
     let now = SystemTime::now();
-    let Index: HashMap<Nucleotide, Nucleotide> = (0 .. t.len()).map(|i| {
+    let Index: HashMap<Nucleotide, Nucleotide> = (0 .. t.len()).into_par_iter().map(|i| {
         (L[i], F[i])
     }).collect();
     match now.elapsed() {

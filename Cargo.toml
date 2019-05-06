@@ -12,6 +12,14 @@ path = "src/bin/main.rs"
 name = "client"
 path = "src/bin/search_client.rs"
 
+[[bin]]
+name = "all_in_one"
+path = "src/bin/all_in_one.rs"
+
+[[bin]]
+name = "bwt_rosalind"
+path = "src/bin/bwt_rosalind.rs"
+
 [lib]
 name = "common"
 path = "src/common/lib.rs"

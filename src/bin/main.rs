@@ -1,8 +1,10 @@
 #[macro_use]
-//extern crate bincode;
+extern crate bincode;
 extern crate common;
 
-//use serde::{Serialize, Deserialize};
+use serde::{Serialize, Deserialize};
+use std::io::BufWriter;
+
 
 use std::io;
 use std::io::Read;
@@ -100,11 +102,21 @@ fn main() -> std::io::Result<()> {
         }
     };
 
-    //let encoded_zipped: Vec<u8> = bincode::serialize(&zipped).unwrap();
-    //let encoded_lf: Vec<u8> = bincode::serialize(&lf).unwrap();
-    //let encoded_suffix: Vec<u8> = bincode::serialize(&sa).unwrap();
-
     // If we serde the arguments here, we can do searches.
+    let now = SystemTime::now();
+    let mut lf_buffer = BufWriter::new(File::create("lf.bincode").unwrap());
+    let g = bincode::serialize_into(&mut lf_buffer, &lf);
+    lf_buffer.flush();
+    match now.elapsed() {
+        Ok(elapsed) => {
+            // it prints '2'
+            println!("WROTE LF: {:?}", elapsed.as_secs());
+        }
+        Err(e) => {
+            // an error occurred!
+            println!("Error: {:?}", e);
+        }
+    };
 
     let coordinates = common::search::search(args.last().expect("Could not unwrap last arg. Were there args?"), &zipped, &lf.FCounts);
     println!("ABA SHOULD BE SOME(2, 4): {:?}", coordinates);
@@ -121,41 +133,6 @@ fn main() -> std::io::Result<()> {
     }).collect();
     //println!("The suffixes are: {:?}", suffix_strings);
     println!("SIZEOF LF: FC; {:?}, F; {:?}, L; {:?}, Index; {:?}", lf.FCounts.len(), lf.F.len()*(1+8), lf.L.len()*(1+8), lf.Index.len()*(9+9));
-
-
-    /*
-    let coordinates = common::search::search("A", &zipped, &lf.FCounts);
-    println!("A SHOULD BE SOME(0, 4): {:?}", coordinates);
-    let coordinates = common::search::search("BBA", &zipped, &lf.FCounts);
-    println!("BBA SHOULD BE NONE: {:?}", coordinates);
-    let coordinates = common::search::search("J", &zipped, &lf.FCounts);
-    println!("J SHOULD BE NONE: {:?}", coordinates);
-    let coordinates = common::search::search("BAZ", &zipped, &lf.FCounts);
-    println!("BAZ SHOULD BE NONE: {:?}", coordinates);
-    let coordinates = common::search::search("BZAA", &zipped, &lf.FCounts);
-    println!("BZAA SHOULD BE NONE: {:?}", coordinates);
-    let coordinates = common::search::search("ABAA", &zipped, &lf.FCounts);
-    println!("ABAA SHOULD BE SOME(5,5): {:?}", coordinates);
-    */
-
-
-    //println!("{:?}", bincode::serialized_size(&zipped));
-    //println!("{:?}", bincode::serialized_size(&lf));
-    //println!("{:?}", bincode::serialized_size(&sa));
-    /*
-    let mut lf_buffer = File::create("lf.bincode")?;
-    let g = bincode::serialize_into(&lf_buffer, &lf);
-    lf_buffer.flush();
-
-    let mut zipped_buffer = File::create("zipped.bincode")?;
-    let g = bincode::serialize_into(&zipped_buffer, &zipped);
-    zipped_buffer.flush();
-
-    let mut sa_buffer = File::create("sa.bincode")?;
-    let g = bincode::serialize_into(&sa_buffer, &sa);
-    sa_buffer.flush();
-    */
-
 
 
     Ok(())

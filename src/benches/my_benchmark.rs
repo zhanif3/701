@@ -93,7 +93,7 @@ fn search_benchmark(c: &mut Criterion) {
 
 
 criterion_group!(name = benches;
-                config = Criterion::default().sample_size(100).measurement_time(Duration::new(10, 0));
-                targets = sa_benchmark, reverse_benchmark, search_benchmark);
+                config = Criterion::default().sample_size(500).measurement_time(Duration::new(10, 0));
+                targets = search_benchmark);
 criterion_main!(benches);
 
