@@ -39,3 +39,33 @@ target/release/all_in_one other_data/220000_dna TTAGAGAAA >> other_metrics
 target/release/all_in_one other_data/230000_dna TTAGAGAAA >> other_metrics
 target/release/all_in_one other_data/240000_dna TTAGAGAAA >> other_metrics
 target/release/all_in_one other_data/250000_dna TTAGAGAAA >> other_metrics
+target/release/all_in_one other_data/260000_dna TTAGAGAAA >> other_metrics
+target/release/all_in_one other_data/270000_dna TTAGAGAAA >> other_metrics
+target/release/all_in_one other_data/280000_dna TTAGAGAAA >> other_metrics
+target/release/all_in_one other_data/290000_dna TTAGAGAAA >> other_metrics
+
+target/release/all_in_one other_data/300000_dna TTAGAGAAA >> other_metrics
+target/release/all_in_one other_data/310000_dna TTAGAGAAA >> other_metrics
+target/release/all_in_one other_data/320000_dna TTAGAGAAA >> other_metrics
+target/release/all_in_one other_data/330000_dna TTAGAGAAA >> other_metrics
+target/release/all_in_one other_data/340000_dna TTAGAGAAA >> other_metrics
+target/release/all_in_one other_data/350000_dna TTAGAGAAA >> other_metrics
+target/release/all_in_one other_data/360000_dna TTAGAGAAA >> other_metrics
+target/release/all_in_one other_data/370000_dna TTAGAGAAA >> other_metrics
+target/release/all_in_one other_data/380000_dna TTAGAGAAA >> other_metrics
+target/release/all_in_one other_data/390000_dna TTAGAGAAA >> other_metrics
+
+target/release/all_in_one other_data/400000_dna TTAGAGAAA >> other_metrics
+target/release/all_in_one other_data/410000_dna TTAGAGAAA >> other_metrics
+target/release/all_in_one other_data/420000_dna TTAGAGAAA >> other_metrics
+target/release/all_in_one other_data/430000_dna TTAGAGAAA >> other_metrics
+target/release/all_in_one other_data/440000_dna TTAGAGAAA >> other_metrics
+target/release/all_in_one other_data/450000_dna TTAGAGAAA >> other_metrics
+target/release/all_in_one other_data/460000_dna TTAGAGAAA >> other_metrics
+target/release/all_in_one other_data/470000_dna TTAGAGAAA >> other_metrics
+target/release/all_in_one other_data/480000_dna TTAGAGAAA >> other_metrics
+target/release/all_in_one other_data/490000_dna TTAGAGAAA >> other_metrics
+
+target/release/all_in_one other_data/500000_dna TTAGAGAAA >> other_metrics
+
+target/release/all_in_one other_data/1000000_dna TTAGAGAAA >> other_metrics

@@ -37,3 +37,33 @@ head -n 220000 27687_ref_fErpCal1.1_chr17.fa > 220000_dna
 head -n 230000 27687_ref_fErpCal1.1_chr17.fa > 230000_dna
 head -n 240000 27687_ref_fErpCal1.1_chr17.fa > 240000_dna
 head -n 250000 27687_ref_fErpCal1.1_chr17.fa > 250000_dna
+head -n 260000 27687_ref_fErpCal1.1_chr17.fa > 260000_dna
+head -n 270000 27687_ref_fErpCal1.1_chr17.fa > 270000_dna
+head -n 280000 27687_ref_fErpCal1.1_chr17.fa > 280000_dna
+head -n 290000 27687_ref_fErpCal1.1_chr17.fa > 290000_dna
+
+head -n 300000 27687_ref_fErpCal1.1_chr17.fa > 300000_dna
+head -n 310000 27687_ref_fErpCal1.1_chr17.fa > 310000_dna
+head -n 320000 27687_ref_fErpCal1.1_chr17.fa > 320000_dna
+head -n 330000 27687_ref_fErpCal1.1_chr17.fa > 330000_dna
+head -n 340000 27687_ref_fErpCal1.1_chr17.fa > 340000_dna
+head -n 350000 27687_ref_fErpCal1.1_chr17.fa > 350000_dna
+head -n 360000 27687_ref_fErpCal1.1_chr17.fa > 360000_dna
+head -n 370000 27687_ref_fErpCal1.1_chr17.fa > 370000_dna
+head -n 380000 27687_ref_fErpCal1.1_chr17.fa > 380000_dna
+head -n 390000 27687_ref_fErpCal1.1_chr17.fa > 390000_dna
+
+head -n 400000 27687_ref_fErpCal1.1_chr17.fa > 400000_dna
+head -n 410000 27687_ref_fErpCal1.1_chr17.fa > 410000_dna
+head -n 420000 27687_ref_fErpCal1.1_chr17.fa > 420000_dna
+head -n 430000 27687_ref_fErpCal1.1_chr17.fa > 430000_dna
+head -n 440000 27687_ref_fErpCal1.1_chr17.fa > 440000_dna
+head -n 450000 27687_ref_fErpCal1.1_chr17.fa > 450000_dna
+head -n 460000 27687_ref_fErpCal1.1_chr17.fa > 460000_dna
+head -n 470000 27687_ref_fErpCal1.1_chr17.fa > 470000_dna
+head -n 480000 27687_ref_fErpCal1.1_chr17.fa > 480000_dna
+head -n 490000 27687_ref_fErpCal1.1_chr17.fa > 490000_dna
+
+head -n 500000 27687_ref_fErpCal1.1_chr17.fa > 500000_dna
+
+head -n 1000000 27687_ref_fErpCal1.1_chr17.fa > 1000000_dna
