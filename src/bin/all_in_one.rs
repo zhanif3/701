@@ -67,11 +67,6 @@ fn main() -> std::io::Result<()> {
 
     let now = SystemTime::now();
     let coordinates = common::search::search(args.last().expect("Could not unwrap last arg. Were there args?"), &zipped, &lf.FCounts);
-
-    let positions = match coordinates {
-        Some(x) => common::suffix_array::get_suffixes_by_pos(sa, x),
-        None => (0, vec![])
-    };
     let search_time = match now.elapsed() {
         Ok(elapsed) => {
             // it prints '2'
@@ -82,6 +77,11 @@ fn main() -> std::io::Result<()> {
             0
         }
     };
+    let positions = match coordinates {
+        Some(x) => common::suffix_array::get_suffixes_by_pos(sa, x),
+        None => (0, vec![])
+    };
+
 
     //println!("You searched for: {:?}.", args.last().expect("Could not unwrap last arg. Were there args?"));
     //println!("There are {:?} matches.", positions.0);
