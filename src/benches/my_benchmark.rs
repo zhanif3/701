@@ -91,6 +91,31 @@ fn search_benchmark(c: &mut Criterion) {
     );
 }
 
+fn parallel_search_benchmark(c: &mut Criterion) {
+    let file_contents: String = common::suffix_array::read_file("/Users/bxa005/masters/701/Project/rust/bwt/src/1_000_000_dna");
+    let mut bench_strings = HashMap::new();
+    bench_strings.insert("contents", file_contents);
+
+    c.bench_function("simple sa generation",
+                     move |b| b.iter(|| {
+                         let foo = &bench_strings["contents"];
+                         common::suffix_array::suffix_array(black_box(&foo))
+                     })
+    );
+}
+
+fn sa_benchmark(c: &mut Criterion) {
+    let file_contents: String = common::suffix_array::read_file("/Users/bxa005/masters/701/Project/rust/bwt/src/1_000_000_dna");
+    let mut bench_strings = HashMap::new();
+    bench_strings.insert("contents", file_contents);
+
+    c.bench_function("simple sa generation",
+                     move |b| b.iter(|| {
+                         let foo = &bench_strings["contents"];
+                         common::suffix_array::suffix_array(black_box(&foo))
+                     })
+    );
+}
 
 criterion_group!(name = benches;
                 config = Criterion::default().sample_size(500).measurement_time(Duration::new(10, 0));
