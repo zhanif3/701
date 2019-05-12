@@ -42,8 +42,16 @@ Serialization functionality can be demonstrated as well:
 target/release/generator other_data/10000_dna
 ```
 
-This command will write several serialized files to the current directory, 
+This command will write several serialized files to the current directory, which will be read by the search client
+to perform searches on a pre-computed index.
 
+```
+target/release/client TTAGAGAAA
+```
+
+A small index is shipped with the Github repository, to allow the client the ability to run without running the generator.
+
+---
 
 Installation From Scratch:
 

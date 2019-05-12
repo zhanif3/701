@@ -80,26 +80,3 @@ fn main() -> std::io::Result<()> {
     println!("{}, {}, {}, {}, {:?}, {:?}", bndm_time, parallel_search_time, windows.len(), occ.len(), args.last().expect("Could not unwrap last arg. Were there args?"), args.get(1).expect("Could not get the cmdline arguments"));
     Ok(())
 }
-
-#[cfg(test)]
-mod tests {
-    use super::*;
-    use itertools::Itertools;
-
-    #[test]
-    fn test_find_all() {
-        let text = b"dhjalkjwqnnnannanaflkjdklfj";
-        let pattern = b"qnnnannan";
-        let windows: Vec<_> = text.par_windows(pattern.len())
-            .map(|x| {
-                let e = match x {
-                    x if x == pattern => x,
-                    _ => (),
-                };
-                b"b"
-            }).collect();
-        println!(windows);
-        assert_eq!(vec![10], windows);
-    }
-
-}

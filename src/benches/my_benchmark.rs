@@ -104,7 +104,7 @@ fn parallel_search_benchmark(c: &mut Criterion) {
     );
 }
 
-fn sa_benchmark(c: &mut Criterion) {
+fn sarr_benchmark(c: &mut Criterion) {
     let file_contents: String = common::suffix_array::read_file("/Users/bxa005/masters/701/Project/rust/bwt/src/1_000_000_dna");
     let mut bench_strings = HashMap::new();
     bench_strings.insert("contents", file_contents);
